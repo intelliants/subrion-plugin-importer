@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin name="importer">
+	<title>Importer</title>
+	<summary>Import data in csv/xml format.</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>3.2.0</version>
+	<date>2014-12-09</date>
+	<compatibility>3.2</compatibility>
+
+	<actions>
+		<action name="importer" url="importer/" icon="list" pages="importer_upload">Importer</action>
+		<action name="importer_upload" url="importer/upload/" icon="plus" pages="importer">Upload File</action>
+	</actions>
+
+	<adminpages>
+		<page name="importer" menus="menu" url="importer/" order="40">Importer</page>
+		<page name="importer_upload" url="importer/upload/" action="add" parent="importer">Upload File</page>
+	</adminpages>
+
+	<phrases>
+		<phrase category="admin" key="importer">Importer</phrase>
+		<phrase category="admin" key="start_import">Start Import</phrase>
+		<phrase category="admin" key="import_completed">Import Completed</phrase>
+		<phrase category="admin" key="entries_limit">Entries Limit</phrase>
+		<phrase category="admin" key="delimiter">Delimiter</phrase>
+		<phrase category="admin" key="progress">Progress</phrase>
+		<phrase category="admin" key="total_entries">Total Entries</phrase>
+		<phrase category="admin" key="file">File</phrase>
+		<phrase category="admin" key="upload_file">Upload File</phrase>
+		<phrase category="admin" key="url_to_file">OR specify file direct download url</phrase>
+		<phrase category="admin" key="check_file">Check file</phrase>
+		<phrase category="admin" key="select_file">Select file</phrase>
+		<phrase category="admin" key="max_allowed_size_for_upload">>Max allowed file size for upload</phrase>
+		<phrase category="admin" key="incorrect_file">Incorrect file name or extension</phrase>
+		<phrase category="admin" key="file_already_exists">File already exists in /uploads/importer folder.</phrase>
+		<phrase category="admin" key="allowed_extensions">Allowed .xml &amp; .csv file types only.</phrase>
+		<phrase category="admin" key="cant_get_file">Can't get a file</phrase>
+		<phrase category="admin" key="file_uploaded">File has been uploaded</phrase>
+		<phrase category="admin" key="upload_failed">File Upload failed</phrase>
+		<phrase category="admin" key="check_permission">Check permissions for /uploads/importer folder. Correct permission are 0755.</phrase>
+		<phrase category="admin" key="use_as_column_name">Use first row as column names.</phrase>
+		<phrase category="admin" key="start_from">Start from</phrase>
+		<phrase category="admin" key="assign_fields">Assign fields</phrase>
+		<phrase category="admin" key="item_fields">Item fields</phrase>
+		<phrase category="admin" key="import_process">Import process</phrase>
+		<phrase category="admin" key="import_fields">Import fields</phrase>
+		<phrase category="admin" key="entry_tag">Entry Tag</phrase>
+		<phrase category="admin" key="select">Select</phrase>
+		<phrase category="admin" key="select_adapter">Select Adapter</phrase>
+		<phrase category="admin" key="get_fields">Get fields</phrase>
+		<phrase category="admin" key="stop">Stop</phrase>
+		<phrase category="admin" key="close">Close</phrase>
+	</phrases>
+</plugin>
