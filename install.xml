@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin name="importer">
 	<title>Importer</title>
-	<summary>Import data in csv/xml format.</summary>
+	<summary>Import items data in csv format</summary>
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>3.2.0</version>
-	<date>2014-12-09</date>
-	<compatibility>3.2</compatibility>
+	<version>4.0.0</version>
+	<date>2015-12-09</date>
+	<compatibility>4.0</compatibility>
 
 	<actions>
 		<action name="importer" url="importer/" icon="list" pages="importer_upload">Importer</action>
@@ -39,7 +39,7 @@
 		<phrase category="admin" key="file_uploaded">File has been uploaded</phrase>
 		<phrase category="admin" key="upload_failed">File Upload failed</phrase>
 		<phrase category="admin" key="check_permission">Check permissions for /uploads/importer folder. Correct permission are 0755.</phrase>
-		<phrase category="admin" key="use_as_column_name">Use first row as column names.</phrase>
+		<phrase category="admin" key="use_as_column_name">Use first row as column names</phrase>
 		<phrase category="admin" key="start_from">Start from</phrase>
 		<phrase category="admin" key="assign_fields">Assign fields</phrase>
 		<phrase category="admin" key="item_fields">Item fields</phrase>
@@ -50,6 +50,5 @@
 		<phrase category="admin" key="select_adapter">Select Adapter</phrase>
 		<phrase category="admin" key="get_fields">Get fields</phrase>
 		<phrase category="admin" key="stop">Stop</phrase>
-		<phrase category="admin" key="close">Close</phrase>
 	</phrases>
 </plugin>

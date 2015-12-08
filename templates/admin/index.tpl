@@ -22,7 +22,7 @@
 			<div class="row js-options-csv hide">
 				<label class="col col-lg-2 control-label" for="input-delimiter">{lang key='delimiter'}</label>
 				<div class="col col-lg-4">
-					<input type="text" name="delimiter" value="" id="input-delimiter">
+					<input type="text" name="delimiter" value="," id="input-delimiter">
 				</div>
 			</div>
 			<div class="row js-options-csv hide">

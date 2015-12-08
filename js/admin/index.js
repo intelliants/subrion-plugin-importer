@@ -111,16 +111,16 @@ $(function()
 		}
 	});
 
-	$('.js-fields .js-add-row').on('click', function()
+	$('.js-fields .js-add-row').on('click', function(e)
 	{
 		e.preventDefault();
 
 		var $thisParent = $(this).closest('.row');
-		var $clone = thisParent.clone(true);
+		var $clone = $thisParent.clone(true);
 		$thisParent.after($clone);
 	});
 
-	$('.js-fields .js-delete-row').on('click', function()
+	$('.js-fields .js-delete-row').on('click', function(e)
 	{
 		e.preventDefault();
 

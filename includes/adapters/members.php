@@ -1,7 +1,7 @@
 <?php
 //##copyright##
 
-class iaAdAgents extends iaImporter
+class iaAdMembers extends iaImporter
 {
 	public function before_row_import($row)
 	{

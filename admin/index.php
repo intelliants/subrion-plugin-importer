@@ -45,20 +45,24 @@ if (iaView::REQUEST_JSON == $iaView->getRequestType())
 		case 'check_file':
 			$file['ext'] = substr(strrchr($_GET['file'], "."), 1);
 
-			if ($file['ext'] == 'csv')
+			if ('csv' == $file['ext'])
 			{
 				$path = $file['path'] . $_GET['file'];
 				$fopen = fopen($path, "r");
 				while(!feof($fopen))
 				{
 					$line = fgets($fopen);
+					if (!isset($lineCount))
+					{
+						$firstLine = $line;
+					}
 					$lineCount++;
 				}
 				fclose($fopen);
 				$output['total'] = $lineCount;
 
 				$data = $iaImporter->readFile($path, 0, 1024);
-				$fields = str_getcsv($data['rows'][0], $_GET['delimiter']);
+				$fields = str_getcsv($firstLine, $_GET['delimiter']);
 				if (!$_GET['as_column'])
 				{
 					foreach ($fields as $key => $value)
@@ -108,7 +112,7 @@ if (iaView::REQUEST_JSON == $iaView->getRequestType())
 		$start = $_POST['start'] ? $_POST['start'] : 0;
 		$path = $file['path'] . $_POST['get_file'];
 
-		if ($file['ext'] == 'csv')
+		if ('csv' == $file['ext'])
 		{
 			$data = $iaImporter->readFile($path, $start);
 
@@ -186,7 +190,7 @@ if (iaView::REQUEST_HTML == $iaView->getRequestType())
 			'text/xml' => 'xml'
 		);
 
-		if (isset($_POST['param']['file']) && !empty($_FILES['file']))
+		if (isset($_POST['v']['file']) && !empty($_FILES['file']))
 		{
 			$file['name'] = $_FILES['file']['name'];
 			$file['ext'] = substr(strrchr($file['name'], "."), 1);
@@ -285,15 +289,19 @@ if (iaView::REQUEST_HTML == $iaView->getRequestType())
 	}
 	else
 	{
-		$files = $iaImporter->listFiles(IA_UPLOADS . 'importer/');
-		$adapters = $iaImporter->listFiles(IA_PLUGINS . 'importer/includes/adapters/');
-
-		$iaItem = $iaCore->factory('item');
-		$items = $iaItem->getItems();
-
-		$iaView->assign('items', $items);
+		$files = array();
+		if (is_dir(IA_UPLOADS . 'importer/'))
+		{
+			$files = $iaImporter->listFiles(IA_UPLOADS . 'importer/');
+		}
 		$iaView->assign('files', $files);
+
+		$adapters = $iaImporter->listFiles(IA_PLUGINS . 'importer/includes/adapters/');
 		$iaView->assign('adapters', $adapters);
+
+		$items = $iaCore->factory('item')->getItems();
+		$iaView->assign('items', $items);
+
 		$iaView->display('index');
 	}
 }

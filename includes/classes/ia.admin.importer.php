@@ -10,7 +10,7 @@ class iaImporter extends abstractPlugin
 	{
 		$classFile = IA_PLUGINS . 'importer' . IA_DS . 'includes' . IA_DS . 'adapters' . IA_DS . $filename;
 		$class = explode('.', $filename);
-		$className = 'iaAd'.ucfirst($class[0]);
+		$className = 'iaAd' . ucfirst($class[0]);
 
 		if (file_exists($classFile))
 		{
@@ -41,7 +41,7 @@ class iaImporter extends abstractPlugin
 		{
 			$data['end'] = true;
 		}
-		
+
 		$data['start'] = $start + strlen($content);
 		$data['rows'] = explode(PHP_EOL, $content);
 
@@ -58,6 +58,7 @@ class iaImporter extends abstractPlugin
 				$files[] = $file;
 			}
 		}
+
 		return $files;
 	}
 }
