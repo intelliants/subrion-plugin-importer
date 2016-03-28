@@ -66,7 +66,7 @@ class iaImporter extends abstractPlugin
 		}
 
 		$data['start'] = $start + strlen($content);
-		$data['rows'] = explode(PHP_EOL, $content);
+		$data['rows'] = explode(PHP_EOL, utf8_encode($content));
 
 		return $data;
 	}
