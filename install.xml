@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin name="importer">
+<module type="plugin" name="importer">
 	<title>Importer</title>
 	<summary>Import items data in csv format</summary>
 	<author>Intelliants LLC</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>4.0.0</version>
-	<date>2016-01-14</date>
-	<compatibility>4.0</compatibility>
+	<version>4.1.0</version>
+	<date>2017-04-04</date>
+	<compatibility>4.1</compatibility>
 
 	<actions>
 		<action name="importer" url="importer/" icon="list" pages="importer_upload">Importer</action>
@@ -51,4 +51,4 @@
 		<phrase category="admin" key="get_fields">Get fields</phrase>
 		<phrase category="admin" key="stop">Stop</phrase>
 	</phrases>
-</plugin>
+</module>
