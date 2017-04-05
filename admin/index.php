@@ -165,9 +165,7 @@ if (iaView::REQUEST_JSON == $iaView->getRequestType()) {
             } else {
                 $output['error'] = true;
             }
-
         }
-
     }
 
     $iaView->assign($output);
@@ -208,7 +206,6 @@ if (iaView::REQUEST_HTML == $iaView->getRequestType()) {
             } else {
                 $iaView->setMessages($messages, ($error ? iaView::ERROR : iaView::SUCCESS));
             }
-
         } elseif (isset($_POST['file_url']) && !empty($_POST['file_url'])) {
             $file['url'] = $_POST['file_url'];
             $file['name'] = substr(strrchr($file['url'], "/"), 1);
