@@ -1,5 +1,4 @@
-<form action="{$smarty.const.IA_SELF}" method="post" enctype="multipart/form-data" class="sap-form form-horizontal">
-
+<form method="post" enctype="multipart/form-data" class="sap-form form-horizontal">
     {preventCsrf}
 
     <div class="wrap-list">
