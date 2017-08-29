@@ -7,11 +7,11 @@ $(function () {
     $('#input-get-file').on('change', function () {
         var name = $(this).val().split('.');
 
-        if ('csv' == name[1]) {
+        if ('csv' === name[1]) {
             $('.js-options-xml').addClass('hide');
             $('.js-options-csv').removeClass('hide');
         }
-        else if ('xml' == name[1]) {
+        else if ('xml' === name[1]) {
             $('.js-options-csv').addClass('hide');
             $('.js-options-xml').removeClass('hide');
         }
@@ -26,13 +26,13 @@ $(function () {
             file: $('#input-get-file').val()
         };
 
-        if ('csv' == name[1]) {
+        if ('csv' === name[1]) {
             options.delimiter = $('#input-delimiter').val();
             if ($('#input-as-column').is(':checked')) {
                 options.as_column = 1;
             }
         }
-        else if ('xml' == name[1]) {
+        else if ('xml' === name[1]) {
             options.tag = $('#input-entry-tag').val();
         }
 
@@ -109,6 +109,8 @@ $(function () {
     var ajaxCall;
 
     $('#js-import').on('click', function () {
+        e.preventDefault();
+
         var params = {};
         var item_fields = [];
         var import_fields = [];
@@ -129,16 +131,16 @@ $(function () {
         $('.js-import-field').each(function (e) {
             import_fields[e] = $(this).val();
         });
+
         params['item_fields'] = item_fields;
         params['import_fields'] = import_fields;
         params['start'] = 0;
 
-        $.get(vUrl, {action: 'start_import_process', adapter: params['adapter']}, function () {
-        });
+        $.get(vUrl, {action: 'start_import_process', adapter: params['adapter']});
 
         function progress(start) {
             params['start'] = +start;
-            $.post(vUrl, params, function (data) {
+            intelli.post(vUrl, params, function (data) {
                 current = +data.imported;
                 imported = imported + current;
 
@@ -176,8 +178,6 @@ $(function () {
 
         //$('.js-process-import').modal('toggle');
         $('#js-modal-close').attr('data-dismiss', '');
-
-        return false;
     });
 
     $('#js-stop-import').on('click', function () {
