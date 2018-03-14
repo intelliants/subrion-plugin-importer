@@ -2,7 +2,7 @@
 /******************************************************************************
  *
  * Subrion - open source content management system
- * Copyright (C) 2017 Intelliants, LLC <https://intelliants.com>
+ * Copyright (C) 2018 Intelliants, LLC <https://intelliants.com>
  *
  * This file is part of Subrion.
  *
@@ -69,6 +69,7 @@ class iaImporter extends abstractModuleAdmin
 
     public function listFiles($path)
     {
+        $files = null;
         $all_files = scandir($path);
         foreach ($all_files as $file) {
             if ($file != "." && $file != "..") {

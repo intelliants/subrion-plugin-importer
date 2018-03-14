@@ -108,7 +108,7 @@ $(function () {
 
     var ajaxCall;
 
-    $('#js-import').on('click', function () {
+    $('#js-import').on('click', function (e) {
         e.preventDefault();
 
         var params = {};
@@ -159,7 +159,7 @@ $(function () {
 
                     $('.modal-body').append($('<p class="alert alert-success" />').text(_t('import_completed') + ': ' + imported));
 
-                    $.post(vUrl, {action: 'finish_import_process', adapter: params['adapter']}, function () {
+                    intelli.post(vUrl, {action: 'finish_import_process', adapter: params['adapter']}, function () {
                     });
                 }
                 else {
