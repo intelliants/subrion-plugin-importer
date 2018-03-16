@@ -2,7 +2,7 @@
 /******************************************************************************
  *
  * Subrion - open source content management system
- * Copyright (C) 2017 Intelliants, LLC <https://intelliants.com>
+ * Copyright (C) 2018 Intelliants, LLC <https://intelliants.com>
  *
  * This file is part of Subrion.
  *
@@ -24,7 +24,7 @@
  *
  ******************************************************************************/
 
-$iaImporter = $iaCore->factoryPlugin('importer', iaCore::ADMIN);
+$iaImporter = $iaCore->factoryModule('importer', IA_CURRENT_MODULE, iaCore::ADMIN);
 
 if (iaView::REQUEST_JSON == $iaView->getRequestType()) {
     $output = array();
@@ -88,7 +88,6 @@ if (iaView::REQUEST_JSON == $iaView->getRequestType()) {
             break;
 
         case 'change_item':
-
             $iaItem = $iaCore->factory('item');
             $items = $iaItem->getItems();
             if (in_array($_GET['item'], $items)) {
@@ -97,7 +96,6 @@ if (iaView::REQUEST_JSON == $iaView->getRequestType()) {
             break;
 
         case 'get_fields':
-
             $iaDbControl = $iaCore->factory('dbcontrol', iaCore::ADMIN);
             $tables = $iaDbControl->getTables();
             $table = $iaDb->prefix . $_GET['table'];

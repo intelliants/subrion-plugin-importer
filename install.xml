@@ -4,9 +4,9 @@
     <summary>Import items data in csv format</summary>
     <author>Intelliants LLC</author>
     <contributor>Intelliants LLC</contributor>
-    <version>4.1.0</version>
-    <date>2017-04-04</date>
-    <compatibility>4.1</compatibility>
+    <version>4.2.0</version>
+    <date>2018-03-14</date>
+    <compatibility>4.2</compatibility>
 
     <actions>
         <action name="importer" url="importer/" icon="list" pages="importer_upload">Importer</action>
